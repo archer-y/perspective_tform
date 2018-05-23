@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	
-	cv::Mat src = cv::imread("/media/titan/media/Data/Dropbox/Data/VANS/Missions/2018-04-19/VANS1_2018-04-18-1500/payload/monoimages/thermal/00001244.png", cv::IMREAD_GRAYSCALE);
+	cv::Mat src = cv::imread("/path/to/image.ext", cv::IMREAD_GRAYSCALE);
 	cv::Mat jet, alpha;
 	cv::applyColorMap(src, jet, cv::COLORMAP_JET);
 	cv::cvtColor(jet, alpha, cv::COLOR_BGR2BGRA);
@@ -22,7 +22,7 @@ int main()
 	// Retrieve 4 channel image
 	cv::Mat tform = ptransform.GetTransformedImage();
 	cv::imshow("img", tform);
-	cv::imwrite("/home/ben/writing.png", tform);
+	cv::imwrite("/path/to/save.ext", tform);
 	cv::waitKey(500);
 
 
